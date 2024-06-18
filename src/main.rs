@@ -19,9 +19,10 @@ fn main() {
     let public_key = (n, e);
     let private_key = (n, d);
 
-    let message = "hello world";
+    let message = "Hello World";
     let encrypted_message = encrypt(message, public_key);
 
+    println!("====================================");
     println!("Mensaje encriptado:");
     for &ch in &encrypted_message {
         print!("{} ", ch);
@@ -29,5 +30,11 @@ fn main() {
     println!();
 
     let decrypted_message = decrypt(&encrypted_message, private_key);
+
     println!("Mensaje desencriptado: {}", decrypted_message);
+    println!("====================================");
+    println!("Numeros Primos: ({}, {})", p, q);
+    println!("Clave Publica: ({}, {})", public_key.0, public_key.1);
+    println!("Clave Privada: ({}, {})", private_key.0, private_key.1);
+    println!("====================================");
 }
